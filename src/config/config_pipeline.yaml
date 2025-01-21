@@ -1,0 +1,35 @@
+version: '1.0'
+
+
+# Directory paths
+directories:
+  input_dir: 'data/raw_data'
+  processed_dir: 'data/processed_data'
+  log_dir: 'logs'
+
+
+# Data processing settings
+data_cleaning: 
+  fill_missing_values: 
+    age: 'median'
+    cabin: 'Unknown'
+    embarked: 'mode'
+
+  feature_engineering: 
+    extract_title: true
+    create_deck: true
+    family_size: true
+
+
+# File naming conventions
+file_naming: 
+  processed_prefix: 'processed'
+  output_prefix: 'analisys'
+  date_format: 'DD/MM/YYYY'
+
+# Logging configuration
+logging:
+  level: 'INFO'
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  file_prefix: 'pipeline'
+  
